@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import SignIn from "./pages/SignIn"
 import "./App.css";
 
 function App() {
   return (
-    <h1>ChatterBox</h1>
+    <SignIn />
   );
 }
 
