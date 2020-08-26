@@ -7,7 +7,13 @@ function Chatroom(){
         state=>state.screenName)
      console.log(statetest)
 
-    return <h1>Chatroom: Welcome {statetest}</h1>
+    return (
+        <div>
+        <h1>Chatroom: Welcome {statetest}</h1>
+        
+        <h2>Users Logged In</h2>
+        </div>
+        )
 }
 
 

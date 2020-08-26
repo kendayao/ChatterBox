@@ -5,8 +5,6 @@ import Chatroom from "./pages/Chatroom"
 import "./App.css";
 
 
-
-
 function App() {
   return (
     <Router>
