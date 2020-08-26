@@ -1,10 +1,13 @@
 import React, {useState} from "react"
 import { Link, useLocation } from "react-router-dom";
+import {useDispatch} from 'react-redux';
+import {getName} from '../actions/index'
 
 
 function SignIn(){
-    const location = useLocation();
+    const dispatch=useDispatch();
 
+    const location = useLocation();
     const [screenName, setScreenName]=useState("")
 
     function handleInputChange(event){
@@ -12,24 +15,22 @@ function SignIn(){
         setScreenName(value)
     }
 
-    console.log(screenName)
-   
     return(
         <div>
-            <h1><i class="fas fa-comment-alt"></i>Chatterbox</h1>
-
+            <h1><i className="fas fa-comment-alt"></i>Chatterbox</h1>
             <form>
-                <label for="name">ScreenName</label>
-                <input name="name" class="name" id="name" type="text" placeholder="Enter ScreenName" onChange={handleInputChange}></input>
+                <label htmlFor="name">ScreenName</label>
+                <input name="name" className="name" id="name" type="text" placeholder="Enter ScreenName" onChange={handleInputChange}></input>
                 <br/>
             </form>
-            <button>
+            <button onClick={()=>dispatch(getName(screenName))}>
                 <Link to="/chatroom" className={location.pathname === "/chatroom" ? "nav-link active" : "nav-link"}>
-                Start Chatting
+                    Start Chatting
                 </Link>
             </button>
         </div>
     )
 }
+
 
 export default SignIn

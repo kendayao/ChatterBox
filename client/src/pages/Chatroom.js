@@ -1,7 +1,13 @@
 import React from "react"
+import {useSelector} from 'react-redux';
 
 function Chatroom(){
-    return <h1>Chatroom</h1>
+
+    const statetest=useSelector(
+        state=>state.screenName)
+     console.log(statetest)
+
+    return <h1>Chatroom: Welcome {statetest}</h1>
 }
 
 
