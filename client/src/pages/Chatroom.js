@@ -43,13 +43,43 @@ function Chatroom(){
         })
     }
 
+
+
+
     return (
         <div>
         <h1>Chatroom: Welcome {chatName} </h1>
         
         <h2>Users Logged In</h2>
         <div>{renderUsers()}</div>
+        
+
+        <div className="modal" tabIndex="-1" role="dialog" id="exampleModal">
+            <div className="modal-dialog">
+                <div className="modal-content chat-modal">
+                    <div className="modal-header">
+                        <h5 className="modal-title">Chatroom</h5>
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div className="modal-body">
+                    Body
+                    </div>
+                    <div className="modal-footer">
+                        <form id="send-container">
+                            <input name="message" type="text" id="message-input" placeholder="type message.."/>
+                            <button type="submit" id="chat-send-button">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
+    
+
+        </div>
+
+
         )
 }
 
