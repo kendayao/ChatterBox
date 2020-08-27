@@ -5,3 +5,42 @@
 #message-container-left{
     color: red
 }
+
+
+.row{
+    height: 100vh;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.column-left{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.column-right{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#send-container2{
+    
+    width: 100%;
+}
+
+
+#send-container2 input{
+    width: 92%;
+    padding: 15px;
+}
+
+#send-container2 button{
+    padding: 15px;
+}
+
+/* .column-right h6{
+    position:fixed;
+    right: 0;
+    color: white;
+    margin-left: auto;
+} */

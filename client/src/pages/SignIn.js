@@ -21,13 +21,13 @@ function SignIn(){
             <form className="name-input">
                 <input name="name" className="name" id="name" type="text" placeholder="Enter screen name" onChange={handleInputChange}></input>
                 <br/>
-            
+            </form>
             <button onClick={()=>dispatch(getName(screenName))} className="start-chatting-btn">
                 <Link to="/chatroom" className={location.pathname === "/chatroom" ? "nav-link active" : "nav-link"}>
                     Start Chatting
                 </Link>
             </button>
-            </form>
+            
         </div>
     )
 }

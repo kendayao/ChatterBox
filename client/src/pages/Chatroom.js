@@ -18,6 +18,7 @@ function Chatroom(){
     const [socketid, setSocketid]=useState("")
     const [chatRoomName, setChatRoomName]=useState("")
     const [userName, setUserName]=useState("")
+    const [avatar, setAvatar]=useState("")
     useEffect(()=>{
         socket = io.connect() 
         socket.on('connect', ()=>{
@@ -71,7 +72,7 @@ function Chatroom(){
         event.preventDefault();
         setSocketid(event.target.name)
         setChatRoomName(event.target.value)
-
+        setAvatar("fas fa-user-circle")
     }
 
 
@@ -115,19 +116,25 @@ function Chatroom(){
         
 
 
-
-        <div className="row">
-            <div className="col-md-4">
-            <h1>Chatroom: Welcome {chatName} </h1>
+        
+        <div className="row ">
+            <div className="col-md-4 column-left">
+            <h1> {chatName} </h1>
         
             <h2>Users Logged In</h2>
             <div>{renderUsers()}</div>
             </div>
-            <div className="col-md-8">
-                <h3>Chatbox</h3>
+
+            <div className="col-md-8 column-right">
+                <h6>TEST</h6>
+                <h5 className="chat-room-name"><i class={avatar}></i> {chatRoomName}</h5>
+                <form id="send-container2">
+                    <input name="message" type="text" id="message-input" placeholder="type message.." onChange={handleInputChange}/>
+                    <button type="submit" id="chat-send-button" onClick={handleSubmit}>Send</button>  
+                </form>
             </div>
-    
         </div>
+        
 
 
 
