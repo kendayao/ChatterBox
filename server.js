@@ -44,9 +44,10 @@ io.on('connection',function(socket){
       io.to(chatInfo.to).emit('render-message', chatInfo.msg);
     });
 
-
-
-
+    socket.on("disconnect", () => {
+      delete userslist[socket.id];
+      io.emit("disconnected",socket.id)
+    });
 
 
   })

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import io from 'socket.io-client'
 import {useSelector} from 'react-redux';
-
+import "./Chatroom.css"
 
 
 
@@ -34,7 +34,6 @@ function Chatroom(){
           });
           
           socket.on('render-message', (message) => {
-            console.log(message)
             setUserName(message.name)
             setChat(chat=>[...chat, message])
             // setAlertState(true)
@@ -42,8 +41,14 @@ function Chatroom(){
             //   setAlertState(null);
             // }, 5000);
           })
-       
+          
+          socket.on("disconnected", id =>{
+              setUsers(users=>{
+                  return users.filter(user=>user.id !==id);
+              })
+          })
 
+          return () => socket.close();
     }, [])
 
  
@@ -81,6 +86,26 @@ function Chatroom(){
     }
 
 
+    const renderChat=()=>{
+        return chat.map(function(message, index){
+            if(message.name!==chatRoomName){
+                return <div key={index} id="message-container-right">{message.name}: <span>{message.message}</span></div>
+            }else{
+                return <div key={index} id="message-container-left">{message.name}: <span>{message.message}</span></div>
+            }
+
+            
+            
+        })
+    }
+
+    const handleClose=()=>{
+        setChat([])
+        
+      }
+      
+
+
 
 
 
@@ -91,14 +116,14 @@ function Chatroom(){
 
 
 
-        <div class="row">
-            <div class="col-md-4">
+        <div className="row">
+            <div className="col-md-4">
             <h1>Chatroom: Welcome {chatName} </h1>
         
             <h2>Users Logged In</h2>
             <div>{renderUsers()}</div>
             </div>
-            <div class="col-md-8">
+            <div className="col-md-8">
                 <h3>Chatbox</h3>
             </div>
     
@@ -114,13 +139,13 @@ function Chatroom(){
             <div className="modal-dialog">
                 <div className="modal-content chat-modal">
                     <div className="modal-header">
-                        <h5 className="modal-title">Chatroom</h5>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        <h5 className="modal-title">Chatroom with {chatRoomName}</h5>
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={handleClose}>
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div className="modal-body">
-                    Body
+                    {renderChat()}
                     </div>
                     <div className="modal-footer">
                         <form id="send-container">
