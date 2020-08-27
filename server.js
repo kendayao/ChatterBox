@@ -35,8 +35,18 @@ io.on('connection',function(socket){
         id:socket.id
       }
       userslist[socket.id]=user
-      // io.emit("user-connected", user)
+      io.emit("user-connected", user)
       io.emit("users",Object.values(userslist));
     })
-   
+
+    socket.on('message', chatInfo => {
+      console.log(chatInfo)
+      io.to(chatInfo.to).emit('render-message', chatInfo.msg);
+    });
+
+
+
+
+
+
   })
