@@ -53,7 +53,7 @@ function Chatroom(){
     }, [])
 
  
-
+    
 
     const handleInputChange=event=>{
         const username=chatName
@@ -73,9 +73,10 @@ function Chatroom(){
         setSocketid(event.target.name)
         setChatRoomName(event.target.value)
         setAvatar("fas fa-user-circle")
+       document.querySelector(".chat-room-welcome").innerHTML=""
     }
 
-
+  
 
 
     const renderUsers=()=>{
@@ -126,11 +127,17 @@ function Chatroom(){
             </div>
 
             <div className="col-md-8 column-right">
-                <h6>TEST</h6>
-                <h5 className="chat-room-name"><i class={avatar}></i> {chatRoomName}</h5>
+                <div class="chat-header">
+                <i class={avatar}></i><h5 className="chat-room-name">{chatRoomName}</h5>
+                <h5 className="chat-room-welcome">Welcome {chatName}</h5>
+                
+                </div>
+                <div class="chat-section">
+                {renderChat()}
+                </div>
                 <form id="send-container2">
                     <input name="message" type="text" id="message-input" placeholder="type message.." onChange={handleInputChange}/>
-                    <button type="submit" id="chat-send-button" onClick={handleSubmit}>Send</button>  
+                    <button type="submit" id="chat-send-button" onClick={handleSubmit}><i class="fas fa-paper-plane"></i></button>  
                 </form>
             </div>
         </div>
@@ -142,7 +149,7 @@ function Chatroom(){
 
 
 
-        <div className="modal" tabIndex="-1" role="dialog" id="exampleModal">
+        <div className="modal" tabIndex="-1" role="dialog" id="">
             <div className="modal-dialog">
                 <div className="modal-content chat-modal">
                     <div className="modal-header">
@@ -152,7 +159,7 @@ function Chatroom(){
                         </button>
                     </div>
                     <div className="modal-body">
-                    {renderChat()}
+                    
                     </div>
                     <div className="modal-footer">
                         <form id="send-container">

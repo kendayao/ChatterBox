@@ -21,21 +21,38 @@
 .column-right{
     padding-left: 0px;
     padding-right: 0px;
+    background-color: #f5f5f5
 }
 
+.chat-header{
+    width: 100%;
+    height: 10%;
+    background-color: #d0d0d0;
+    padding-top: 1%;
+}
+
+
+
+
+
 #send-container2{
-    
+    position: fixed;
+    bottom: 0;
     width: 100%;
 }
 
 
 #send-container2 input{
-    width: 92%;
+    width: 60%;
     padding: 15px;
 }
 
 #send-container2 button{
     padding: 15px;
+}
+
+.chat-room-name{
+    display: inline;
 }
 
 /* .column-right h6{
