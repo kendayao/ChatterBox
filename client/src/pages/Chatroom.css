@@ -31,25 +31,32 @@
     padding-top: 1%;
 }
 
+.chat-section{
+    height: 80%
+}
+   
 
 
 
-
-#send-container2{
-    position: fixed;
-    bottom: 0;
+.chat-footer{
+    height: 10%;
     width: 100%;
+    text-align: center;
+    background-color: #d0d0d0;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-
-#send-container2 input{
-    width: 60%;
-    padding: 15px;
+.chat-footer input{
+    padding: 10px;
+    width: 80%;
 }
 
-#send-container2 button{
-    padding: 15px;
+.chat-footer button{
+    padding: 10px;
+    margin-left: 10px;
 }
+
 
 .chat-room-name{
     display: inline;

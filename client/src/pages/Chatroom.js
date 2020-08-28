@@ -3,9 +3,6 @@ import io from 'socket.io-client'
 import {useSelector} from 'react-redux';
 import "./Chatroom.css"
 
-
-
-
 let socket;
 
 function Chatroom(){
@@ -70,6 +67,7 @@ function Chatroom(){
     
     const handleChat=event=>{
         event.preventDefault();
+        setChat([]);
         setSocketid(event.target.name)
         setChatRoomName(event.target.value)
         setAvatar("fas fa-user-circle")
@@ -119,26 +117,31 @@ function Chatroom(){
 
         
         <div className="row ">
-            <div className="col-md-4 column-left">
+            <div className="col-md-3 column-left">
             <h1> {chatName} </h1>
         
             <h2>Users Logged In</h2>
             <div>{renderUsers()}</div>
             </div>
 
-            <div className="col-md-8 column-right">
+
+            <div className="col-md-9 column-right">
+
                 <div class="chat-header">
                 <i class={avatar}></i><h5 className="chat-room-name">{chatRoomName}</h5>
-                <h5 className="chat-room-welcome">Welcome {chatName}</h5>
+                <h5 className="chat-room-welcome">{chatName}</h5>
                 
                 </div>
                 <div class="chat-section">
                 {renderChat()}
                 </div>
-                <form id="send-container2">
+
+                <div class="chat-footer">
+                
                     <input name="message" type="text" id="message-input" placeholder="type message.." onChange={handleInputChange}/>
                     <button type="submit" id="chat-send-button" onClick={handleSubmit}><i class="fas fa-paper-plane"></i></button>  
-                </form>
+                
+                </div>
             </div>
         </div>
         
