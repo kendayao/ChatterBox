@@ -70,8 +70,8 @@ function Chatroom(){
         setChat([]);
         setSocketid(event.target.name)
         setChatRoomName(event.target.value)
-        setAvatar("fas fa-user-circle")
-       document.querySelector(".chat-room-welcome").innerHTML=""
+        setAvatar("far fa-user-circle visitor-avatar")
+       
     }
 
   
@@ -80,7 +80,7 @@ function Chatroom(){
     const renderUsers=()=>{
         return users.map(function(user){
             return (<div key={user.id}>
-                <button type="button" name={user.id} value={user.username} className="btn btn-primary btn-chat" data-toggle="modal" data-target="#exampleModal" onClick={handleChat}>{user.username}</button>
+                <button type="button" name={user.id} value={user.username} className="btn btn-primary btn-chat" data-toggle="modal" data-target="#exampleModal" onClick={handleChat}><i class="far fa-user-circle visitor-avatar"></i>{user.username}</button>
             </div>)
         })
     }
@@ -118,30 +118,18 @@ function Chatroom(){
         
         <div className="row ">
             <div className="col-md-3 column-left">
-            <h1> {chatName} </h1>
-        
-            <h2>Users Logged In</h2>
+                <div className="column-left-header"> 
+                    <h2><i className="fas fa-comment-alt"></i> Chatterbox</h2>
+                </div>
+          
+            <h5>Users ready to chat</h5>
             <div>{renderUsers()}</div>
             </div>
 
 
             <div className="col-md-9 column-right">
-
-                <div class="chat-header">
-                <i class={avatar}></i><h5 className="chat-room-name">{chatRoomName}</h5>
-                <h5 className="chat-room-welcome">{chatName}</h5>
-                
-                </div>
-                <div class="chat-section">
-                {renderChat()}
-                </div>
-
-                <div class="chat-footer">
-                
-                    <input name="message" type="text" id="message-input" placeholder="type message.." onChange={handleInputChange}/>
-                    <button type="submit" id="chat-send-button" onClick={handleSubmit}><i class="fas fa-paper-plane"></i></button>  
-                
-                </div>
+                <i class="fas fa-user-circle fa-8x"></i>
+                <h1>Welcome, {chatName}!</h1>
             </div>
         </div>
         
@@ -152,7 +140,7 @@ function Chatroom(){
 
 
 
-        <div className="modal" tabIndex="-1" role="dialog" id="">
+        <div className="modal" tabIndex="-1" role="dialog" id="exampleModal">
             <div className="modal-dialog">
                 <div className="modal-content chat-modal">
                     <div className="modal-header">

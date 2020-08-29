@@ -13,58 +13,54 @@
     margin-right: 0px;
 }
 
+
+/* ----------column-left------------ */
 .column-left{
     padding-left: 0px;
     padding-right: 0px;
+    color: #d7d7d7
 }
 
-.column-right{
-    padding-left: 0px;
-    padding-right: 0px;
-    background-color: #f5f5f5
-}
-
-.chat-header{
-    width: 100%;
-    height: 10%;
-    background-color: #d0d0d0;
-    padding-top: 1%;
-}
-
-.chat-section{
-    height: 80%
-}
-   
-
-
-
-.chat-footer{
-    height: 10%;
-    width: 100%;
+.column-left-header{
+    margin-top: 35px;
     text-align: center;
-    background-color: #d0d0d0;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    
 }
 
-.chat-footer input{
-    padding: 10px;
-    width: 80%;
+.chat-name{
+    margin-top: 15px;
 }
 
-.chat-footer button{
-    padding: 10px;
+.column-left h5{
+    text-align: center;
+    margin-top: 35px;
+}
+
+.btn-chat{
+    background-color: #0f3460;
+    border: none;
+    font-size: 130%;
+    width: 100%;
+    text-align: left;
+}
+
+.visitor-avatar{
     margin-left: 10px;
+    margin-right: 8px;
 }
 
 
-.chat-room-name{
-    display: inline;
+/* -----------column-right------------- */
+.column-right{
+    
+    background-color: #d0d0d0;
+    text-align: center;
+    padding-top: 18%;
+    
 }
 
-/* .column-right h6{
-    position:fixed;
-    right: 0;
-    color: white;
-    margin-left: auto;
-} */
+.column-right i{
+    margin-bottom: 15px;
+}
+
+
