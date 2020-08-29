@@ -27,9 +27,6 @@
     
 }
 
-.chat-name{
-    margin-top: 15px;
-}
 
 .column-left h5{
     text-align: center;
@@ -64,3 +61,39 @@
 }
 
 
+/* -------------------modal-------------------- */
+
+.chat-modal{
+    height: 600px;   
+}
+
+.modal-content{
+    border-radius: 8px !important
+}
+
+.modal-title{
+    font-size: 28px
+}
+.modal-header,
+.modal-footer{
+    background-color: #0f3460;
+    color: #d0d0d0;
+    height: 12%
+}
+
+#send-container{
+   width: 100%;
+}
+
+#send-container input{
+    width: 94%;
+    padding: 5px;
+    margin-right: 5px
+ }
+
+ #send-container button{
+    padding: 5px;
+    width: 5%;
+    color: #0f3460;
+    background-color: #d0d0d0
+ }

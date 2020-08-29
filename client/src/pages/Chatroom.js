@@ -141,21 +141,21 @@ function Chatroom(){
 
 
         <div className="modal" tabIndex="-1" role="dialog" id="exampleModal">
-            <div className="modal-dialog">
+            <div className="modal-dialog modal-lg">
                 <div className="modal-content chat-modal">
                     <div className="modal-header">
-                        <h5 className="modal-title">Chatroom with {chatRoomName}</h5>
+                        <h5 className="modal-title"><i class="far fa-user-circle visitor-avatar"></i>{chatRoomName}</h5>
                         <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={handleClose}>
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div className="modal-body">
-                    
+                        {renderChat()}
                     </div>
                     <div className="modal-footer">
                         <form id="send-container">
-                            <input name="message" type="text" id="message-input" placeholder="type message.." onChange={handleInputChange}/>
-                            <button type="submit" id="chat-send-button" onClick={handleSubmit}>Send</button>
+                            <input name="message" type="text" id="message-input" placeholder="type message..." onChange={handleInputChange}/>
+                            <button type="submit" id="chat-send-button" onClick={handleSubmit}><i class="fas fa-paper-plane"></i></button>
                         </form>
                     </div>
                 </div>
