@@ -1,24 +1,37 @@
 #message-container-right{
     color: blue;
-    text-align:right
+    text-align:right;
+    font-size: 23px;
+    
 }
 
+.message-span-right{
+    border: 1px solid black;
+    padding: 8px;
+    border-radius: 20px 5px 20px 20px;
+    margin-right: 10px;
+    background-color: #d7d7d7;
+    color: #3a3a3a
+}
 
-
-
+.chatname-right{
+    position: absolute;
+    font-size: 10px;
+    color: #0f3360c6;
+    margin-left: 14px
+}
 
 
 
 #message-container-left{
     font-size: 23px;
-    
+    margin-bottom: 5px;
 }
-
 
 .message-span-left{
     border: 1px solid black;
     padding: 8px;
-    border-radius: 8px 50px 30px;
+    border-radius: 5px 20px 20px;
     margin-left: 10px;
     background-color: #0f3460;
     color: #d0d0d0;
@@ -30,12 +43,18 @@
     color: #0f3460
 }
 
-.chatname{
+.chatname-left{
     position: absolute;
     font-size: 10px;
     margin-left: 10px;
     color: #0f3360c6;
 }
+
+
+
+
+
+
 
 
 
