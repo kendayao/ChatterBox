@@ -91,7 +91,7 @@ function Chatroom(){
     const renderChat=()=>{
         return chat.map(function(message, index){
             if(message.name!==chatRoomName){
-                return <div key={index} id="message-container-left"><i class="fas fa-user-circle chat-avatar"></i><span className="message-span-left">{message.message}</span><br></br><p>{message.time}</p></div>
+                return <div key={index} id="message-container-left"><i class="fas fa-user-circle chat-avatar"></i><span class="chatname">You</span><span className="message-span-left">{message.message}</span><br></br><p>{message.time}</p></div>
             }else{
                 return <div key={index} id="message-container-right"><i class="far fa-user-circle"></i><span>{message.message}</span></div>
             }

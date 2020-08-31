@@ -10,7 +10,6 @@
 
 
 #message-container-left{
-    color: red;
     font-size: 23px;
     
 }
@@ -21,15 +20,22 @@
     padding: 8px;
     border-radius: 8px 50px 30px;
     margin-left: 10px;
+    background-color: #0f3460;
+    color: #d0d0d0;
     
 }
 
 .chat-avatar{
-    font-size: 45px;
+    font-size: 50px;
+    color: #0f3460
 }
 
-
-
+.chatname{
+    position: absolute;
+    font-size: 10px;
+    margin-left: 10px;
+    color: #0f3360c6;
+}
 
 
 
