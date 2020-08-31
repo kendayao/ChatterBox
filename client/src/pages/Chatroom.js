@@ -7,7 +7,7 @@ let socket;
 
 function Chatroom(){
 
-    
+    const currentTime=new Date().toLocaleTimeString();
     const chatName=useSelector(state=>state.screenName)
     const [users, setUsers]=useState([])
     const [message, setMessage]=useState({})
@@ -32,6 +32,7 @@ function Chatroom(){
           });
           
           socket.on('render-message', (message) => {
+
             setUserName(message.name)
             setChat(chat=>[...chat, message])
             // setAlertState(true)
@@ -51,7 +52,7 @@ function Chatroom(){
 
  
     
-
+    
     const handleInputChange=event=>{
         const username=chatName
         const value=event.target.value
@@ -61,13 +62,12 @@ function Chatroom(){
     const handleSubmit=event=>{
         event.preventDefault();
         setChat(chat=>[...chat,message])
-        socket.emit('message', {msg:message, to:socketid})
+        socket.emit('message', {msg:message, to:socketid, time:currentTime })
         document.getElementById('message-input').value="";
     }
     
     const handleChat=event=>{
         event.preventDefault();
-        setChat([]);
         setSocketid(event.target.name)
         setChatRoomName(event.target.value)
         setAvatar("far fa-user-circle visitor-avatar")
@@ -86,12 +86,14 @@ function Chatroom(){
     }
 
 
+    
+    
     const renderChat=()=>{
         return chat.map(function(message, index){
             if(message.name!==chatRoomName){
-                return <div key={index} id="message-container-right">{message.name}: <span>{message.message}</span></div>
+                return <div key={index} id="message-container-left"><i class="fas fa-user-circle chat-avatar"></i><span className="message-span-left">{message.message}</span><br></br><p>{message.time}</p></div>
             }else{
-                return <div key={index} id="message-container-left">{message.name}: <span>{message.message}</span></div>
+                return <div key={index} id="message-container-right"><i class="far fa-user-circle"></i><span>{message.message}</span></div>
             }
 
             
@@ -128,8 +130,10 @@ function Chatroom(){
 
 
             <div className="col-md-9 column-right">
+                <a>Logout</a><br/>
                 <i class="fas fa-user-circle fa-8x"></i>
                 <h1>Welcome, {chatName}!</h1>
+                <p>Click on a user to open a Chatterbox</p>
             </div>
         </div>
         

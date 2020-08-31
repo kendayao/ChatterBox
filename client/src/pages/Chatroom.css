@@ -1,10 +1,36 @@
 #message-container-right{
-    color: blue
+    color: blue;
+    text-align:right
 }
 
+
+
+
+
+
+
 #message-container-left{
-    color: red
+    color: red;
+    font-size: 23px;
+    
 }
+
+
+.message-span-left{
+    border: 1px solid black;
+    padding: 8px;
+    border-radius: 8px 50px 30px;
+    margin-left: 10px;
+    
+}
+
+.chat-avatar{
+    font-size: 45px;
+}
+
+
+
+
 
 
 .row{
