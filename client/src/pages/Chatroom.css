@@ -166,6 +166,18 @@
     }
 }
 
+@media only screen and (max-width: 992px){
+    #send-container input{
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    #send-container button{
+        width: 10%;
+    }
+}
+
 @media only screen and (max-width: 420px){
     .chatname-right{
         font-size: 9px;
