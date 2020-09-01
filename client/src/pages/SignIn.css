@@ -23,6 +23,10 @@ body{
     color: #0f3460
 }
 
+.nav-link:hover{
+    color: #0c0c0c;
+}
+
 .start-chatting-btn{
     border-radius: 6px;
     margin-top: 15px;

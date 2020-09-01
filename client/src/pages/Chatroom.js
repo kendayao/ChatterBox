@@ -9,7 +9,6 @@ let socket;
 
 function Chatroom(){
     const location = useLocation();
-    const currentTime=new Date().toLocaleTimeString();
     const chatName=useSelector(state=>state.screenName)
     const [users, setUsers]=useState([])
     const [message, setMessage]=useState({})
@@ -73,7 +72,7 @@ function Chatroom(){
     const handleSubmit=event=>{
         event.preventDefault();
         setChat(chat=>[...chat,message])
-        socket.emit('message', {msg:message, to:socketid, time:currentTime })
+        socket.emit('message', {msg:message, to:socketid })
         document.getElementById('message-input').value="";
     }
     
