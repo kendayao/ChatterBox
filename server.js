@@ -40,7 +40,6 @@ io.on('connection',function(socket){
     })
 
     socket.on('message', chatInfo => {
-      console.log(chatInfo)
       io.to(chatInfo.to).emit('render-message', chatInfo.msg);
     });
 
