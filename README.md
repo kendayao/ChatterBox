@@ -3,7 +3,7 @@
 
 ## Description
 
-Chatterbox is a responsive web application that allows you to chat online with a friend. You will experience modern design with normal chat functionality!
+Chatterbox is a responsive web application that allows you to chat online with a friend. You will experience modern design with traditional chat functionality!
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@ Chatterbox is a responsive web application that allows you to chat online with a
 
 ## Technology
 
-- React
+- REACT
 - Redux
 - Socket.io
 - HTML
