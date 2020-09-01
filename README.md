@@ -25,8 +25,8 @@ Chatterbox is a responsive web application that allows you to chat online with a
 - Socket.io
 - HTML
 - CSS
-- Boostrap
-- Javascript
+- Bootstrap
+- JavaScript
 
 
 
