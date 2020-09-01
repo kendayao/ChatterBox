@@ -75,6 +75,6 @@ For any questions, please contact kendayao at kendayao@gmail.com
 
 Deployed application link: https://chaterbox.herokuapp.com/
 
-Video demo link: https://youtu.be/BIwBHYlAzIE
+Video demo link: https://youtu.be/zJR8LgixNXY
 
 <img src="client/public/images/chatterboxlive2.png" width="400" height="300">
