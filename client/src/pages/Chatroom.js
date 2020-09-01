@@ -17,7 +17,6 @@ function Chatroom(){
     const [chatRoomName, setChatRoomName]=useState("")
     const [userName, setUserName]=useState("")
     const [alertState, setAlertState]=useState(null)
-    const [disconnectedUser, setDisconnectedUser]=useState("")
 
     useEffect(()=>{
         socket = io.connect() 
@@ -45,13 +44,6 @@ function Chatroom(){
           })
           
           socket.on("disconnected", id =>{
-              setDisconnectedUser(function(users){
-                  users.forEach(user=>{
-                      if(user.id===id){
-                          return user.username
-                      }
-                  })
-              })
               setUsers(users=>{
                   return users.filter(user=>user.id !==id);
               })
@@ -61,8 +53,7 @@ function Chatroom(){
     }, [])
 
  
-    console.log(users)
-    console.log(disconnectedUser)
+  
     const handleInputChange=event=>{
         const username=chatName
         const value=event.target.value

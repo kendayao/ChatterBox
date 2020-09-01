@@ -6,7 +6,8 @@
 
 .logo{
     font-size: 450%;
-    color: #d7d7d7
+    color: #d7d7d7;
+    font-family: 'Lato', sans-serif;
 }
 
 body{
@@ -36,4 +37,22 @@ body{
     width: 15%;
     border-radius: 5px;
     padding: 4px;
+}
+
+@media only screen and (max-width: 1024px){
+    .name-input input{
+        width:26%
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .name-input input{
+        width:35%
+    }
+}
+
+@media only screen and (max-width: 420px){
+    .logo{
+        font-size: 300%
+    }
 }

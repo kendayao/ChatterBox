@@ -16,7 +16,7 @@
 .column-left-header{
     margin-top: 35px;
     text-align: center;
-    
+    font-family: 'Lato', sans-serif;
 }
 
 
@@ -151,4 +151,23 @@
 #chat-send-button:hover {
     color: #0c0c0c;
     
+}
+
+
+@media only screen and (max-width: 420px){
+    #send-container input{
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 420px){
+    #send-container button{
+        width: 12%;
+    }
+}
+
+@media only screen and (max-width: 420px){
+    .chatname-right{
+        font-size: 9px;
+    }
 }
