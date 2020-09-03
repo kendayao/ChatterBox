@@ -128,7 +128,7 @@ function Chatroom(){
                     Logout
                 </Link>
                 <i class="fas fa-user-circle fa-8x"></i>
-                <h1>Welcome, {chatName}!</h1>
+                <h1>Welcome {chatName}!</h1>
                 <p>Click on a user to open a Chatterbox</p>
             </div>
         </div>
